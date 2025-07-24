@@ -985,7 +985,7 @@ export default function Portfolio() {
               viewport={{ once: true }}
               className="text-gray-400 text-center md:text-right text-xs md:text-sm"
             >
-              © 2024 Lupo Oluwatobi. Crafted with passion, precision, and lots of ☕
+              © 2025 Lupo Oluwatobi. Crafted with passion, precision, and lots of ☕
               <br />
               <span className="text-xs">Built with Next.js, Tailwind CSS, and Framer Motion</span>
             </motion.p>
