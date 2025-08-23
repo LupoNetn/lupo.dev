@@ -23,7 +23,7 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
       title: "LinkedIn",
       subtitle: "Connect with Daniel Lupo",
       action: "View Profile",
-      link: "https://www.linkedin.com/in/daniel-lupo-a5a7b8202/",
+      link: "https://www.linkedin.com/in/daniel-lupo-o",
     },
     {
       icon: Github,
