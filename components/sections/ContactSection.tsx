@@ -112,7 +112,7 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
             </motion.div>
            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
   <a
-    href="/lupo_Oluwatobi_resume1.pdf"
+    href="/Lupo_Oluwatobi_resume1.pdf"
     download
     className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-3 md:px-10 md:py-4 rounded-full text-base md:text-lg font-semibold backdrop-blur-sm transition-all duration-300 bg-transparent flex items-center justify-center"
   >
