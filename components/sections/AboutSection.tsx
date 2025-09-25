@@ -23,7 +23,7 @@ export default function AboutSection({ aboutRef }: AboutSectionProps) {
     {
       icon: Code2,
       title: "Experience",
-      description: "3+ years of professional development",
+      description: "1+ years of professional development",
     },
   ]
 

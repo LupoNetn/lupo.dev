@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Github, ExternalLink, Calendar, Users } from "lucide-react"
+import Link from "next/link"
 
 interface Project {
   id: number
@@ -85,9 +86,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           <h3 className="text-3xl md:text-4xl font-black text-white mb-4 md:mb-6 leading-tight">
             {project.title}
           </h3>
+         
           <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-4 md:mb-6">
             {project.longDescription}
           </p>
+
+          <a className="font-bold text-gray-200" href={project.github}>Github</a>
+          <br />
+          <a className="font-bold text-gray-200" href={project.live}>Live Link</a>
         </div>
 
         {/* Tech Stack */}
