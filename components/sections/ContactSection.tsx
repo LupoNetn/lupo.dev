@@ -23,7 +23,7 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
       title: "LinkedIn",
       subtitle: "Connect with Daniel Lupo",
       action: "View Profile",
-      link: "https://www.linkedin.com/in/daniel-lupo-a5a7b8202/",
+      link: "https://www.linkedin.com/in/daniel-lupo-o",
     },
     {
       icon: Github,
@@ -110,15 +110,16 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
                 Start a Project
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="outline"
-                className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-3 md:px-10 md:py-4 rounded-full text-base md:text-lg font-semibold backdrop-blur-sm transition-all duration-300 bg-transparent"
-              >
-                <Download className="w-4 h-4 md:w-5 md:h-5 mr-3" />
-                Download Resume
-              </Button>
-            </motion.div>
+           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+  <a
+    href="/Lupo_Oluwatobi_resume1.pdf"
+    download
+    className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-3 md:px-10 md:py-4 rounded-full text-base md:text-lg font-semibold backdrop-blur-sm transition-all duration-300 bg-transparent flex items-center justify-center"
+  >
+    <Download className="w-4 h-4 md:w-5 md:h-5 mr-3" />
+    Download Resume
+  </a>
+</motion.div>
           </motion.div>
         </motion.div>
       </div>
