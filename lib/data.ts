@@ -50,6 +50,12 @@ export const skills: Skill[] = [
     category: "Styling",
     color: "from-teal-400 to-cyan-500",
   },
+   {
+    name: "G-sap",
+    icon: Palette,
+    category: "Animation",
+    color: "from-yellow-400 to-orange-500",
+  },
   {
     name: "JavaScript",
     icon: Code2,
