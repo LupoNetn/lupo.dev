@@ -87,7 +87,7 @@ export const projects: Project[] = [
     tech: ["React", "TypeScript", "Tailwind CSS", "IndexedDB"],
     image: "/notelllly.jpg",
     github: "https://github.com/luponetn/notely",
-    live: "https://notely-six-alpha-app.vercel.app",
+    live: "https://notely-six-alpha.vercel.app",
     featured: false,
     category: "Productivity",
     year: "2025",
