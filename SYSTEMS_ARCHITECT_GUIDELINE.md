@@ -8,7 +8,7 @@ This document serves as your operational manual for bridging the gap between a w
 
 ### PHASE 1: THE FOUNDATIONS (Months 1-3)
 
-_Goal: Understand the "Ground Truth" of how computers actually execute your code._
+_Goal: Understand the "Ground Truth" of how computers actually execute your code
 
 1.  **Operating Systems (The Environment)**:
     - **Process vs Thread**: Deeply understand multitasking, context switching, and scheduling.
