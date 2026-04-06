@@ -14,7 +14,7 @@ _Goal: Understand the "Ground Truth" of how computers actually execute your code
     - **Process vs Thread**: Deeply understand multitasking, context switching, and scheduling.
     - **Memory Management**: Learn how heap vs stack works. Understand virtual memory and page faults.
     - **I/O Models**: Learn the difference between Blocking, Non-blocking, and Asynchronous I/O (epoll, kqueue).
-    - **Activity**: Install a headless Linux distro (Arch or Debian) and manage it entirely via the CLI.
+    - **Activity**: Install a headless Linux distro (Arch or Debian) and manage it entirely via the CLI
 
 2.  **Computer Networking (The Fabric)**:
     - **OSI Model**: Move beyond HTTP. Understand TCP flow control, congestion avoidance, and UDP's trade-offs.
