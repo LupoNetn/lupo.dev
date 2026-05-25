@@ -24,7 +24,7 @@ export default function AboutSection({ aboutRef }: AboutSectionProps) {
     {
       icon: Database,
       title: "Infrastructure & Tooling",
-      description: "Leveraging Docker, Git, and modern backend development workflows to consistently build, test, and deploy solid projects.",
+      description: "Leveraging Git and modern backend workflows to consistently ship solid projects. I have a deep, growing interest in engineering developer tools and core infrastructure platforms.",
       color: "zinc"
     },
   ]
@@ -68,10 +68,10 @@ export default function AboutSection({ aboutRef }: AboutSectionProps) {
               className="space-y-5 text-base md:text-lg text-zinc-400 font-light leading-relaxed max-w-lg"
             >
               <p>
-                I specialize in engineering high-throughput backend systems and distributed services. I design architectures that prioritize operational simplicity, performance optimization, and reliable failure recovery.
+                I'm a backend-focused engineer driven by the mechanics of the web. I obsess over building scalable APIs, optimizing database performance, and designing architectures that prioritize operational simplicity and speed.
               </p>
               <p className="text-zinc-500 text-sm border-l border-zinc-800 pl-4 italic">
-                "I believe senior engineering is about knowing how things break, and building systems resilient enough to survive it."
+                "Code is cheap, but reliable systems are invaluable. I build things to scale, last, and recover gracefully when they break."
               </p>
             </motion.div>
           </div>

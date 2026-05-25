@@ -153,7 +153,7 @@ export default function ExperienceSection({ experienceRef, experiences }: Experi
             viewport={{ once: true }}
             className="text-zinc-500 font-mono text-[9px] uppercase tracking-wider max-w-sm"
           >
-            Production environments where I&apos;ve shipped mission-critical backend systems at scale.
+            Production environments where I&apos;ve engineered and shipped production-ready code at scale.
           </motion.p>
         </div>
 
