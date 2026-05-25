@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowUpRight, Network, Zap, ShieldCheck } from "lucide-react"
+import { ArrowUpRight, Cpu, Terminal, Shield, ArrowDown } from "lucide-react"
 import Image from "next/image"
 
 interface HeroSectionProps {
@@ -15,171 +15,151 @@ export default function HeroSection({ heroRef, scrollToSection }: HeroSectionPro
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex items-center justify-center px-6 lg:px-12 relative overflow-hidden pt-32 pb-20 bg-[#010101]"
+      className="min-h-screen flex items-center justify-center px-4 md:px-8 relative overflow-hidden pt-28 pb-16 bg-[#050505]"
     >
-      {/* Immersive Background Effects */}
+      {/* Immersive Background Effects (Static, High Performance) */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Animated Gradient Orbs */}
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.15, 0.1]
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600 rounded-full blur-[150px]" 
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-600 rounded-full blur-[150px]" 
-        />
-        
-        {/* Grid Overlay */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-150 contrast-150 mix-blend-overlay" />
-        
-        {/* Scanline Effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/[0.03] to-transparent h-40 w-full animate-scan pointer-events-none" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-zinc-900/30 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-zinc-900/20 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           {/* Hero Text Content */}
           <div className="lg:col-span-12 xl:col-span-7 flex flex-col items-center xl:items-start text-center xl:text-left">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 backdrop-blur-2xl rounded-full mb-10 overflow-hidden group"
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full mb-6 font-mono text-[9px] uppercase tracking-wider text-zinc-400"
             >
-              <span className="w-2 h-2 bg-blue-500 rounded-full aura-glow-blue animate-pulse" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-zinc-400 group-hover:text-zinc-100 transition-colors">
-                Available: <span className="text-blue-500">Core_Architect_v2</span>
-              </span>
+              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+              <span>Available for Full-time Roles // Remote</span>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <h1 className="text-6xl md:text-8xl xl:text-[11rem] font-black text-white mb-6 tracking-tighter leading-[0.8]">
-                <span className="text-shine">LUPO</span>
-                <span className="text-blue-600 drop-shadow-[0_0_30px_rgba(37,99,235,0.4)]">.</span>
+              <h1 className="text-6xl md:text-7xl xl:text-8xl font-black text-white mb-4 tracking-tighter leading-[0.9]">
+                LUPO<span className="text-zinc-700">.</span>
               </h1>
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="max-w-2xl text-lg md:text-2xl xl:text-3xl text-zinc-400 font-light leading-snug tracking-tight mb-12"
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="max-w-xl text-lg md:text-xl text-zinc-400 font-light leading-relaxed tracking-tight mb-8"
             >
-              Building <span className="text-white italic underline-offset-8 decoration-blue-500/40 decoration-1 underline">scalable backend systems</span> for 
-              web and mobile applications with a focus on performance and reliability.
+              Software Engineer focused on <span className="text-white font-medium">high-performance backend systems</span>, 
+              distributed architectures, and developer tooling. Building reliable infrastructure designed to scale.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="flex flex-wrap justify-center xl:justify-start gap-4 md:gap-6"
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="flex flex-wrap justify-center xl:justify-start gap-4"
             >
               <Button
                 onClick={() => scrollToSection("projects")}
-                className="bg-white text-black hover:bg-blue-600 hover:text-white px-8 md:px-12 py-6 md:py-9 rounded-full text-xs md:text-sm font-black uppercase tracking-[0.3em] group relative overflow-hidden transition-all duration-700 aura-glow-blue"
+                className="bg-white text-black hover:bg-zinc-200 h-11 px-6 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors duration-300"
               >
-                <span className="relative z-10 flex items-center gap-3">
+                <span className="flex items-center gap-2">
                   Projects
-                  <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("contact")}
-                className="border-zinc-800 text-zinc-500 hover:text-white hover:bg-white/5 px-8 md:px-12 py-6 md:py-9 rounded-full text-xs md:text-sm font-black tracking-[0.3em] backdrop-blur-sm transition-all duration-700"
+                className="border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-900 h-11 px-6 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors duration-300"
               >
                 Connect
               </Button>
             </motion.div>
 
-            {/* Technical Metadata Bar */}
+            {/* Live Node Monitor Widget */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-              className="mt-16 md:mt-24 w-full grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 border-t border-white/5 pt-12"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="mt-8 p-4 bg-zinc-950/80 border border-zinc-900 rounded-2xl w-full max-w-md font-mono text-[10px] text-zinc-500 space-y-2.5 text-left"
             >
-              {[
-                { label: "Main Stack", value: "Go / Node.js", icon: Zap },
-                { label: "Systems", value: "Real-time / WebSocket", icon: Network },
-                { label: "Database", value: "PostgreSQL / Redis", icon: ShieldCheck },
-              ].map((item, i) => (
-                <div key={i} className="space-y-2 group text-center xl:text-left">
-                  <div className="text-[9px] font-mono uppercase text-zinc-500 tracking-[0.4em] flex justify-center xl:justify-start items-center gap-2 group-hover:text-blue-500 transition-colors">
-                    <item.icon size={12} strokeWidth={1.5} /> {item.label}
-                  </div>
-                  <div className="text-base md:text-lg font-mono text-zinc-200 tracking-tighter">{item.value}</div>
+              <div className="flex justify-between items-center border-b border-zinc-900 pb-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                  <span className="text-zinc-300 font-semibold tracking-wider">LIVE NODE MONITOR</span>
                 </div>
-              ))}
+                <span className="text-zinc-700">US-EAST-1</span>
+              </div>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                <div className="space-y-0.5">
+                  <div className="text-zinc-600 tracking-wider">SYSTEM STATUS</div>
+                  <div className="text-emerald-400 font-medium tracking-tight">OPERATIONAL</div>
+                </div>
+                <div className="space-y-0.5">
+                  <div className="text-zinc-600 tracking-wider">API LATENCY</div>
+                  <div className="text-zinc-300 font-medium tracking-tight">~14ms</div>
+                </div>
+                <div className="space-y-0.5">
+                  <div className="text-zinc-600 tracking-wider">UPTIME</div>
+                  <div className="text-zinc-300 font-medium tracking-tight">99.99%</div>
+                </div>
+                <div className="space-y-0.5">
+                  <div className="text-zinc-600 tracking-wider">DEPLOYMENT</div>
+                  <div className="text-zinc-300 font-medium tracking-tight">STABLE // V1.2</div>
+                </div>
+              </div>
             </motion.div>
           </div>
 
-          {/* Hero Visual - High Aura Artistic Element */}
+          {/* Hero Visual - Sleek Dark Frame */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-12 xl:col-span-5 relative mt-12 xl:mt-0"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="lg:col-span-12 xl:col-span-5 relative mt-8 xl:mt-0 flex justify-center"
           >
-            <div className="relative w-full max-w-[350px] mx-auto xl:max-w-none aspect-[4/5] p-1 bg-gradient-to-br from-white/10 to-transparent rounded-[32px] md:rounded-[40px] aura-glow-blue animate-aura-float overflow-hidden">
-              <div className="w-full h-full bg-black rounded-[30px] md:rounded-[38px] overflow-hidden relative group">
+            <div className="relative w-full max-w-[320px] aspect-[4/5] p-1.5 bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden">
+              <div className="w-full h-full bg-[#080808] rounded-2xl overflow-hidden relative group">
                 <Image 
                   src="/me.jpg" 
-                  alt="Lupo High Aura" 
+                  alt="Lupo Profile" 
                   fill 
-                  className="object-cover grayscale brightness-50 md:brightness-50 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-[2s] ease-out"
+                  className="object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-95 transition-all duration-700 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                 
-                {/* HUD Elements */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 pointer-events-none" />
-                
-                <div className="absolute top-6 md:top-10 right-6 md:right-10 flex flex-col items-end gap-2">
-                  <div className="text-[8px] md:text-[10px] font-mono text-blue-500 bg-black/60 backdrop-blur-md px-2 md:px-3 py-1 md:py-1.5 border border-blue-500/20 rounded-full">SYST_02X</div>
-                  <div className="text-[7px] md:text-[8px] font-mono text-zinc-500 tracking-tighter uppercase">ROOT_LEVEL</div>
+                {/* Tech specifications minimal layout */}
+                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-widest">ROLE</span>
+                    <span className="text-[11px] font-bold text-white uppercase tracking-tight">Backend Dev</span>
+                  </div>
+                  <div className="flex flex-col items-end gap-0.5">
+                    <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-widest">ENV</span>
+                    <span className="font-mono text-[10px] text-zinc-300 font-medium uppercase tracking-tight">GO / NODE</span>
+                  </div>
                 </div>
-                
-                <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12 text-left space-y-1 md:space-y-2">
-                  <div className="h-0.5 w-8 md:w-12 bg-blue-500 opacity-50 group-hover:w-full transition-all duration-[2s]" />
-                  <div className="text-[40px] md:text-[60px] font-black text-white leading-none tracking-tighter opacity-10 group-hover:opacity-100 transition-all duration-1000">X_ARCH</div>
-                  <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase tracking-[0.5em] pl-1">Engineering_Core</div>
-                </div>
-
-                {/* Animated Light Sweep */}
-                <motion.div 
-                  animate={{ left: ["-100%", "200%"] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  className="absolute top-0 bottom-0 w-[40%] bg-gradient-to-r from-transparent via-white/[0.05] to-transparent skew-x-12" 
-                />
               </div>
             </div>
-            
-            {/* Ambient Background Aura */}
-            <div className="absolute -inset-20 md:-inset-40 bg-blue-600/5 rounded-full blur-[120px] -z-10 animate-pulse" />
           </motion.div>
         </div>
       </div>
       
-      {/* Scroll Indicator */}
+      {/* Clean Scroll Down */}
       <motion.div 
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 cursor-pointer opacity-40 hover:opacity-100 transition-opacity"
+        onClick={() => scrollToSection("about")}
       >
-        <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-[0.4em]">Initialize_Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-blue-500/50 to-transparent" />
+        <span className="text-[8px] font-mono text-zinc-500 uppercase tracking-wider">Scroll to view</span>
+        <ArrowDown size={10} className="text-zinc-500 animate-bounce" />
       </motion.div>
     </section>
   )

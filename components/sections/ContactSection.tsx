@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Github, Linkedin, MessageCircle, Send, Globe, ArrowUpRight } from "lucide-react"
+import { Mail, Github, Linkedin, Globe, ArrowUpRight } from "lucide-react"
 
 interface ContactSectionProps {
   contactRef: React.RefObject<HTMLElement>
@@ -13,22 +13,22 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
       name: "GitHub",
       icon: Github,
       url: "https://github.com/luponetn",
-      label: "Fetch_Source",
+      label: "SOURCE",
       color: "zinc"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/luponetn",
-      label: "Establish_Sync",
-      color: "blue"
+      url: "https://linkedin.com/in/daniel-lupo-o",
+      label: "CONNECT",
+      color: "zinc"
     },
     {
       name: "Twitter",
       icon: Globe,
-      url: "https://twitter.com/luponetn",
-      label: "Public_Log",
-      color: "cyan"
+      url: "https://twitter.com/oluwatobii.io",
+      label: "LOG",
+      color: "zinc"
     }
   ]
 
@@ -36,96 +36,89 @@ export default function ContactSection({ contactRef }: ContactSectionProps) {
     <section
       id="contact"
       ref={contactRef}
-      className="py-40 md:py-60 px-6 lg:px-12 bg-[#010101] relative border-t border-white/5 overflow-hidden"
+      className="py-24 md:py-36 px-4 md:px-8 bg-[#050505] relative border-t border-zinc-900 overflow-hidden"
     >
-      {/* Immersive Background */}
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
-        <div className="text-center mb-40 max-w-4xl">
+        <div className="text-center mb-16 max-w-2xl">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="font-mono text-blue-500 text-[10px] mb-8 inline-flex items-center gap-6 uppercase tracking-[0.5em]"
+            className="font-mono text-zinc-500 text-[9px] mb-4 inline-flex items-center gap-4 uppercase tracking-wider"
           >
-            <span className="w-12 h-[1px] bg-blue-500/30" />
-            CONNECT
-            <span className="w-12 h-[1px] bg-blue-500/30" />
+            <span className="w-8 h-[1px] bg-zinc-800" />
+            04 / CONNECT
+            <span className="w-8 h-[1px] bg-zinc-800" />
           </motion.div>
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-8xl xl:text-[10rem] font-black text-white mb-16 tracking-tighter leading-[0.8]"
+            className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-none"
           >
-            LET'S <span className="text-shine">TALK</span>.
+            GET IN TOUCH<span className="text-zinc-800">.</span>
           </motion.h2>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
           >
-            <p className="text-xl md:text-2xl xl:text-4xl text-zinc-400 font-light tracking-tight leading-tight mb-20 px-4">
-              I'm open to <span className="text-white italic">collaborations</span> and new opportunities. 
-              Let's build something scalable and reliable together.
+            <p className="text-base md:text-lg text-zinc-400 font-light tracking-tight leading-relaxed mb-10">
+              I am open to collaborations, technical discussions, and new engineering opportunities. Let's design reliable architectures together.
             </p>
           </motion.div>
 
-          <div className="flex flex-col items-center gap-12">
+          <div className="flex flex-col items-center">
             <motion.a
-              href="mailto:luponetn@gmail.com"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
+              href="mailto:daniellupo30@gmail.com"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="group relative inline-flex items-center justify-center p-1 font-black text-white transition-all duration-1000 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-[30px] md:rounded-[40px] aura-glow-blue hover:scale-105 active:scale-95"
+              className="group bg-zinc-950/60 p-5 md:p-6 rounded-2xl border border-zinc-900 hover:border-zinc-800 transition-all duration-300 flex items-center gap-4 md:gap-6 max-w-md w-full"
             >
-              <div className="relative px-6 md:px-12 py-6 md:py-10 bg-[#010101] rounded-[29px] md:rounded-[39px] flex items-center gap-4 md:gap-6">
-                <div className="p-4 md:p-5 bg-blue-600 rounded-full group-hover:aura-glow-blue transition-all duration-700">
-                  <Mail size={24} strokeWidth={1.5} className="md:w-8 md:h-8" />
-                </div>
-                <div className="text-left">
-                  <div className="text-[8px] md:text-[10px] font-mono uppercase tracking-[0.4em] text-blue-500 mb-1 md:mb-2">Get in touch</div>
-                  <div className="text-xl md:text-3xl xl:text-5xl border-b-2 border-transparent group-hover:border-blue-500/50 transition-all duration-700 font-bold tracking-tighter">
-                    luponetn@gmail.com
-                  </div>
-                </div>
-                <ArrowUpRight size={20} className="md:w-6 md:h-6 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-700 ml-4 md:ml-6" />
+              <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 group-hover:text-white transition-colors duration-300">
+                <Mail size={18} strokeWidth={1.5} />
               </div>
+              <div className="text-left flex-1">
+                <div className="font-mono text-[8px] uppercase tracking-wider text-zinc-500 mb-0.5">Email Protocol</div>
+                <div className="text-base md:text-lg font-bold text-white tracking-tight">
+                  daniellupo30@gmail.com
+                </div>
+              </div>
+              <ArrowUpRight size={14} className="text-zinc-600 group-hover:text-white transition-colors duration-300" />
             </motion.a>
           </div>
         </div>
 
         {/* Social Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl">
           {socialLinks.map((link, index) => (
             <motion.a
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="glass-card p-6 md:p-8 rounded-[24px] md:rounded-[32px] flex items-center justify-between group hover:border-white/10 transition-all duration-700 hover:-translate-y-1 md:hover:-translate-y-2 hover:aura-glow-blue/10"
+              className="bg-zinc-950/60 p-4 rounded-xl flex items-center justify-between group border border-zinc-900 hover:border-zinc-800 transition-all duration-200"
             >
-              <div className="flex items-center gap-4 md:gap-6">
-                <div className="p-3 md:p-4 bg-white/5 border border-white/10 rounded-xl md:rounded-2xl text-zinc-400 group-hover:text-blue-500 transition-colors duration-700">
-                  <link.icon size={20} strokeWidth={1} className="md:w-6 md:h-6" />
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-zinc-900 border border-zinc-800 rounded-lg text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                  <link.icon size={16} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <div className="text-[8px] md:text-[9px] font-mono uppercase tracking-[0.3em] text-zinc-600 group-hover:text-blue-500/50 transition-colors">{link.label}</div>
-                  <div className="text-lg md:text-xl font-bold text-white tracking-tight">{link.name}</div>
+                  <div className="text-[7px] font-mono uppercase tracking-wider text-zinc-600">{link.label}</div>
+                  <div className="text-sm font-bold text-white tracking-tight">{link.name}</div>
                 </div>
               </div>
-              <ArrowUpRight size={14} className="md:w-4 md:h-4 text-zinc-800 group-hover:text-blue-500 transition-all duration-700" />
+              <ArrowUpRight size={12} className="text-zinc-700 group-hover:text-zinc-400 transition-colors" />
             </motion.a>
           ))}
         </div>

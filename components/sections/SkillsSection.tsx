@@ -20,45 +20,42 @@ export default function SkillsSection({ skillsRef, skills }: SkillsSectionProps)
     <section
       id="skills"
       ref={skillsRef}
-      className="py-20 md:py-60 px-6 lg:px-12 bg-[#010101] relative border-t border-white/5 overflow-hidden"
+      className="py-24 md:py-36 px-4 md:px-8 bg-[#050505] relative border-t border-zinc-900 overflow-hidden"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02] mask-radial" 
-           style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col items-center text-center mb-16 md:mb-32">
+        <div className="flex flex-col items-center text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="font-mono text-blue-500 text-[10px] mb-8 flex items-center gap-6 uppercase tracking-[0.5em]"
+            className="font-mono text-zinc-500 text-[9px] mb-4 flex items-center gap-4 uppercase tracking-wider"
           >
-            <span className="w-12 h-[1px] bg-blue-500/30" />
-            TECHNICAL_TOOLKIT
-            <span className="w-12 h-[1px] bg-blue-500/30" />
+            <span className="w-8 h-[1px] bg-zinc-800" />
+            02 / EXPERTISE
+            <span className="w-8 h-[1px] bg-zinc-800" />
           </motion.div>
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-none"
+            className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-none"
           >
-            TECHNICAL <span className="text-shine">STACK</span><span className="text-zinc-800">.</span>
+            CORE TOOLKIT<span className="text-zinc-800">.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em] max-w-md"
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+            className="text-zinc-500 font-mono text-[9px] uppercase tracking-wider max-w-xs"
           >
-            A curated list of technologies I use to build scalable and modern applications.
+            Technologies and protocols I use to build robust system foundations.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {skills.map((skill, index) => (
             <SkillCard key={skill.name} skill={skill} index={index} />
           ))}

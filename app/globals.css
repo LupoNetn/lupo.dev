@@ -4,47 +4,47 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 240 10% 2%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 240 10% 2%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 240 10% 2%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 240 3.7% 12%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
+    --muted: 240 3.7% 12%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 3.7% 12%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --border: 240 3.7% 12%;
+    --input: 240 3.7% 12%;
     --ring: 240 4.9% 83.9%;
-    --radius: 0px;
+    --radius: 4px;
   }
 }
 
 @layer utilities {
   .aura-glow-blue {
-    box-shadow: 0 0 100px -20px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 30px -10px rgba(59, 130, 246, 0.2);
   }
   .aura-glow-purple {
-    box-shadow: 0 0 100px -20px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 30px -10px rgba(168, 85, 247, 0.15);
   }
   .glass-card {
-    @apply bg-zinc-950/40 backdrop-blur-3xl border border-white/5;
+    @apply bg-zinc-950/90 border border-zinc-900 transition-all duration-300;
   }
   .text-shine {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-500 via-white to-zinc-500 bg-[length:200%_auto] animate-shine;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-zinc-400 via-white to-zinc-400 bg-[length:200%_auto] animate-shine;
   }
   .mask-radial {
-    mask-image: radial-gradient(circle, white, transparent);
+    mask-image: radial-gradient(circle at center, white, transparent 75%);
   }
   .animate-shine {
-    animation: shine 2s linear infinite;
+    animation: shine 3s linear infinite;
   }
   .animate-border-flow {
     animation: border-flow 6s ease-in-out infinite;
@@ -56,47 +56,28 @@
 }
 
 @keyframes border-flow {
-  0% { border-color: rgba(59, 130, 246, 0.1); }
-  50% { border-color: rgba(59, 130, 246, 0.4); }
-  100% { border-color: rgba(59, 130, 246, 0.1); }
-}
-
-@keyframes scan {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(100%); }
-}
-
-.animate-scan {
-  animation: scan 12s linear infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(0.5deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-.animate-aura-float {
-  animation: float 12s ease-in-out infinite;
+  0% { border-color: rgba(63, 63, 70, 0.4); }
+  50% { border-color: rgba(63, 63, 70, 0.8); }
+  100% { border-color: rgba(63, 63, 70, 0.4); }
 }
 
 @layer base {
   body {
-    @apply bg-[#010101] text-zinc-100 antialiased selection:bg-blue-500/30 overflow-x-hidden;
+    @apply bg-[#050505] text-zinc-100 antialiased selection:bg-blue-500/30 overflow-x-hidden;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "salt";
   }
   
   h1, h2, h3, h4 {
-    @apply tracking-tighter font-bold;
+    @apply tracking-tighter font-semibold;
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-black;
+  @apply bg-[#050505];
 }
 ::-webkit-scrollbar-thumb {
   @apply bg-zinc-800 hover:bg-zinc-700 transition-colors;

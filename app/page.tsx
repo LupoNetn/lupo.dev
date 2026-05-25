@@ -1,12 +1,13 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { useInView, motion, useSpring, useMotionValue } from "framer-motion"
+import { useInView } from "framer-motion"
 
 // Import components
 import HeroSection from "@/components/sections/HeroSection"
 import ContactSection from "@/components/sections/ContactSection"
 import AboutSection from "@/components/sections/AboutSection"
+import ExperienceSection from "@/components/sections/ExperienceSection"
 import ProjectsSection from "@/components/sections/ProjectsSection"
 import SkillsSection from "@/components/sections/SkillsSection"
 
@@ -14,7 +15,7 @@ import Footer from '@/components/layout/Footer'
 import Navigation from "@/components/layout/Navigation"
 
 // Import data
-import { skills, projects } from "@/lib/data"
+import { skills, projects, experiences } from "@/lib/data"
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home")
@@ -23,6 +24,7 @@ export default function Portfolio() {
   const heroRef = useRef(null)
   const aboutRef = useRef(null)
   const skillsRef = useRef(null)
+  const experienceRef = useRef(null)
   const projectsRef = useRef(null)
   const contactRef = useRef(null)
 
@@ -30,6 +32,7 @@ export default function Portfolio() {
   const heroInView = useInView(heroRef, { amount: 0.3 })
   const aboutInView = useInView(aboutRef, { amount: 0.3 })
   const skillsInView = useInView(skillsRef, { amount: 0.3 })
+  const experienceInView = useInView(experienceRef, { amount: 0.3 })
   const projectsInView = useInView(projectsRef, { amount: 0.2 })
   const contactInView = useInView(contactRef, { amount: 0.3 })
 
@@ -39,6 +42,7 @@ export default function Portfolio() {
       home: heroInView,
       about: aboutInView,
       skills: skillsInView,
+      experience: experienceInView,
       projects: projectsInView,
       contact: contactInView,
     }
@@ -48,42 +52,17 @@ export default function Portfolio() {
         break
       }
     }
-  }, [heroInView, aboutInView, skillsInView, projectsInView, contactInView])
+  }, [heroInView, aboutInView, skillsInView, experienceInView, projectsInView, contactInView])
 
-  // Mouse transformation for aura light
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
-  
-  const springConfig = { damping: 25, stiffness: 150 }
-  const springX = useSpring(mouseX, springConfig)
-  const springY = useSpring(mouseY, springConfig)
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX)
-      mouseY.set(e.clientY)
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
-
-  // Function to scroll to a specific section
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <div className="min-h-screen bg-[#010101] text-zinc-100 selection:bg-blue-500/30 font-sans">
-      {/* High-Aura Mouse Light */}
-      <motion.div 
-        className="fixed inset-0 z-[1] pointer-events-none opacity-40 mix-blend-screen"
-        style={{
-          background: `radial-gradient(600px circle at var(--x) var(--y), rgba(59, 130, 246, 0.08), transparent 80%)`,
-          //@ts-ignore
-          "--x": springX,
-          "--y": springY,
-        } as any}
-      />
+    <div className="min-h-screen bg-[#050505] text-zinc-100 selection:bg-blue-500/20 font-sans antialiased">
+      {/* Sleek, static architectural background lighting */}
+      <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_top_right,rgba(24,24,27,0.5),transparent_50%)] pointer-events-none" />
+      <div className="fixed inset-0 z-0 bg-[radial-gradient(circle_at_bottom_left,rgba(9,9,11,0.5),transparent_50%)] pointer-events-none" />
 
       {/* Navigation Bar */}
       <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
@@ -104,6 +83,9 @@ export default function Portfolio() {
 
         {/* Skills Section */}
         <SkillsSection skillsRef={skillsRef} skills={skills} />
+
+        {/* Experience Section */}
+        <ExperienceSection experienceRef={experienceRef} experiences={experiences} />
 
         {/* Projects Section */}
         <ProjectsSection projectsRef={projectsRef} projects={projects} />

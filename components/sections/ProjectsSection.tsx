@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Globe, Cpu, Zap, Server, Code2 } from "lucide-react"
 import ProjectCard from "@/components/ui/ProjectCard"
 
 interface Project {
@@ -28,49 +27,46 @@ export default function ProjectsSection({ projectsRef, projects }: ProjectsSecti
     <section
       id="projects"
       ref={projectsRef}
-      className="py-40 md:py-60 px-6 lg:px-12 bg-[#010101] relative border-t border-white/5 overflow-hidden"
+      className="py-24 md:py-36 px-4 md:px-8 bg-[#050505] relative border-t border-zinc-900 overflow-hidden"
     >
-      {/* Background Aura */}
-      <div className="absolute top-[20%] right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-[20%] left-0 w-[500px] h-[500px] bg-indigo-600/5 rounded-full blur-[150px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-40 flex flex-col xl:flex-row xl:items-end justify-between gap-12">
-          <div className="max-w-3xl">
+        <div className="mb-24 flex flex-col xl:flex-row xl:items-end justify-between gap-6">
+          <div className="max-w-xl">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="font-mono text-blue-500 text-[10px] mb-8 flex items-center gap-6 uppercase tracking-[0.5em]"
+              className="font-mono text-zinc-500 text-[9px] mb-4 flex items-center gap-4 uppercase tracking-wider"
             >
-              <span className="w-12 h-[1px] bg-blue-500/30" />
-              PROJECTS
+              <span className="w-8 h-[1px] bg-zinc-800" />
+              04 / PROJECTS
             </motion.div>
             <motion.h2
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-7xl xl:text-9xl font-black text-white mb-10 tracking-tighter leading-[0.8]"
+              className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-none"
             >
-              SELECTED <br /><span className="text-shine">WORKS</span><span className="text-zinc-800">.</span>
+              SYSTEMS ARCHITECTURES<span className="text-zinc-800">.</span>
             </motion.h2>
           </div>
           
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="xl:pb-4"
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+            className="xl:pb-2"
           >
-            <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.4em] max-w-sm text-right hidden xl:block">
-              A collection of projects focused on scalable architecture and real-time systems.
+            <p className="text-zinc-500 font-mono text-[9px] uppercase tracking-wider max-w-xs text-left xl:text-right">
+              Production-ready services built with computational efficiency, transactional safety, and robust APIs.
             </p>
           </motion.div>
         </div>
 
-        <div className="space-y-60">
+        <div className="space-y-32">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
